@@ -22,6 +22,12 @@ public class CourseClass {
     @ManyToOne
     private Classroom classroom;
 
+    @ManyToOne
+    private Course course;
+
+    @ManyToMany
+    private Set<Student> students;
+
     public long getId() {
         return id;
     }
@@ -68,5 +74,21 @@ public class CourseClass {
 
     public void setClassroom(Classroom classroom) {
         this.classroom = classroom ;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

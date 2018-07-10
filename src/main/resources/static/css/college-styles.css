@@ -2,11 +2,25 @@
 
 #student-body{
     background-image: url("static/img/student-background");
+    background-size: 100%;
     background-position: top;
 }
 
 #admin-body{
     background-image: url("static/img/admin-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#login-page{
+    background-image: url("static/img/college-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#register-page{
+    background-image: url("static/img/college-logo-background.jpg");
+    background-size: 100%;
     background-position: top;
 }
 
@@ -21,3 +35,82 @@
     color: white;
 }
 
+.special-button{
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.55);
+    opacity: 2;
+    color: silver;
+    padding: 0 5px 5px 5px;
+    border-color: gold;
+    border-radius: 30px;
+}
+
+.content-wrapper{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    border: 2px solid white;
+}
+.content-wrapper-g{
+    background-color: rgba(255,215,0,0.5);
+    padding: 16px;
+    border: 2px solid white;
+}
+
+.fading-in-animation{
+    animation-name: fade-in;
+    animation-duration: 0.6s;
+}
+.fading-out-animation{
+    animation-name: fade-out;
+    animation-duration: 0.6s;
+}
+
+/*animations*/
+
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 5;
+    }
+}
+
+@keyframes fade-out {
+    0%{
+        opacity: 5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1,1);
+    }
+    75% {
+        color: black;
+        background-color: silver;
+        font-weight: 300;
+    }
+    100% {
+        transform: scale(1.1,1.1);
+        color: black;
+        background-color: silver;
+        font-weight: 400;
+    }
+}
+@keyframes emphasize {
+    0% {
+        transform: scale(1,1);
+        font-weight: 300;
+        color: white;
+    }
+    100% {
+        transform: scale(1.7,1);
+        color: #ffe866;
+        font-weight: 600;
+    }
+}

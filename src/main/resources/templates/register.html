@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Title</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <th:block th:replace="base :: csslinks"></th:block>
 </head>
-<body>
+<body id="register-page">
 <div class="container mt-5">
     <form class="form-signin" th:action="@{/register}" th:object="${user}" method="post">
         <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
