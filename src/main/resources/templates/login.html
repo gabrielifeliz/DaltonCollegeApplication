@@ -2,16 +2,19 @@
 <html lang="en" xmlns:th="www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org.thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Login!</title>
     <th:block th:replace="base :: csslinks"></th:block>
 </head>
 <body id="login-page">
-<div class="container mt-5">
+<div th:replace="base :: navbar"></div>
+<div class="container mt-5 content-wrapper fading-in-animation">
     <form th:action="@{/login}" method="post" class="form-signin">
         <legend>Please Login</legend>
+        <br>
         <div th:if="${param.error}" class="alert alert-danger" role="alert">
             Invalid username and password.
         </div>
+        <br>
         <div th:if="${param.logout}" class="alert alert-success" role="alert">
             You have been logged out.
         </div>
@@ -20,6 +23,7 @@
             <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
                    autofocus="">
         </div>
+        <br><br>
         <div class="form-label-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Password"
@@ -31,7 +35,7 @@
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
+        <p class="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
     </form>
 </div>
 </body>

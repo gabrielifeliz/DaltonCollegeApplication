@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org.thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
-    <title>Title</title>
+    <title>Register!</title>
     <th:block th:replace="base :: csslinks"></th:block>
 </head>
 <body id="register-page">
-<div class="container mt-5">
+<div th:replace="base :: navbar"></div>
+<div class="container mt-5 content-wrapper fading-in-animation m1">
     <form class="form-signin" th:action="@{/register}" th:object="${user}" method="post">
         <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
         <span th:if="${usernameErr}" class="text-danger">Username already exists...Pick another</span>
@@ -26,7 +27,7 @@
         </select>
         <br>
         <button class="btn btn-lg btn-warning btn-block" type="submit">Sign up</button>
-        <p class="mt-5 mb-3 text-muted">© 2018-2019</p>
+        <p class="mt-5 mb-3 text-muted text-center">© 2018-2019</p>
     </form>
 </div>
 </body>
