@@ -21,6 +21,12 @@ public class Instructor {
     @OneToMany
     private Set<CourseClass> classes;
 
+    @ManyToMany
+    private Set<Department> departments;
+
+    @ManyToMany
+    private Set<Student> students;
+
     public Instructor(){
         classes = new HashSet<>();
     }
@@ -71,5 +77,21 @@ public class Instructor {
 
     public void setClasses(Set<CourseClass> classes) {
         this.classes = classes;
+    }
+
+    public Set<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Set<Department> departments) {
+        this.departments = departments;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

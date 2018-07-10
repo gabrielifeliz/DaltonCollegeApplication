@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -68,5 +69,13 @@ public class Course {
 
     public void setCredits(int credits) {
         this.credits = credits;
+    }
+
+    public Set<CourseClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<CourseClass> classes) {
+        this.classes = classes;
     }
 }
