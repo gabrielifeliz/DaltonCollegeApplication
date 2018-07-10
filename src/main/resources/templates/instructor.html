@@ -10,26 +10,26 @@
 
 <div class="container">
 
-    <h2>List of Courses </h2>
+    <h2>List of Instructor</h2>
     <table class="table table-bordered">
         <thead>
         <tr>
-            <th>Course Num</th>
-            <th>Subjet Code</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Number of Credit</th>
+            <th>Employee Number</th>
+            <th>Name of Instructor</th>
+            <th>Department</th>
+            <th>Office Number</th>
+
 
 
         </tr>
         </thead>
         <tbody>
-        <tr th:each="cousres : ${courses}">
-            <td th:text="${cousres.courseNum}"></td>
-            <td th:text="${cousres.subjectCode}"></td>
-            <td th:text="${cousres.name}"></td>
-            <td th:text="${cousres.description}"></td>
-            <td th:text="${cousres.credits}"></td>
+        <tr th:each="instructors : ${instructors}">
+            <td th:text="${instructors.employeeNum}"></td>
+            <td th:text="${instructors.name}"></td>
+            <td th:text="${instructors.department}"></td>
+            <td th:text="${instructors.officeNum}"></td>
+
 
         </tr>
 
