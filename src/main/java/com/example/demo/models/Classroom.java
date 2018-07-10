@@ -1,9 +1,7 @@
 package com.example.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Classroom {
@@ -16,6 +14,9 @@ public class Classroom {
     private int roomNum;
 
     private int maxCapacity;
+
+    @OneToMany
+    private Set<CourseClass> classes;
 
     public long getId() {
         return id;
@@ -47,5 +48,13 @@ public class Classroom {
 
     public void setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
+    }
+
+    public Set<CourseClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<CourseClass> classes) {
+        this.classes = classes;
     }
 }

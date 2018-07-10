@@ -1,9 +1,7 @@
 package com.example.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Instructor {
@@ -18,6 +16,9 @@ public class Instructor {
     private String department;
 
     private int officeNum;
+
+    @OneToMany
+    private Set<CourseClass> classes;
 
     public long getId() {
         return id;

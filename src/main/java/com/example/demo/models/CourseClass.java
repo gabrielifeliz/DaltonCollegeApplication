@@ -19,7 +19,7 @@ public class CourseClass {
     private Set<Instructor> instructors;
 
     @ManyToOne
-    private Classroom classroom ;
+    private Classroom classroom;
 
     public CourseClass() {
         instructors = new HashSet<>();
