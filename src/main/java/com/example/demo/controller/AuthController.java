@@ -31,7 +31,7 @@ public class AuthController {
     @GetMapping("/register")
     public String regiter(Model model) {
         model.addAttribute("user", new AppUser());
-        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
+//        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
         return "register";
     }
 
@@ -44,7 +44,7 @@ public class AuthController {
             model.addAttribute("usernameErr", users.existsByUsername(currentUser.getUsername()));
             return "register";
         }
-
+        user.addRole(roles.findByRole("STUDENT"));
         users.save(user);
         return "redirect:/login";
     }
@@ -55,5 +55,15 @@ public class AuthController {
 
         role = new UserRole("TEACHER");
         roles.save(role);
+
+        role = new UserRole("ADMIN");
+        roles.save(role);
+
+        AppUser admin = new AppUser();
+        admin.setUsername("admin");
+        admin.setPassword("pass");
+        admin.addRole(roles.findByRole("ADMIN"));
+
+        users.save(admin);
     }
 }

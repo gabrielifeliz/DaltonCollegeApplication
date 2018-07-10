@@ -1,5 +1,7 @@
 package com.example.demo.models.authentication;
 
+import com.example.demo.models.Instructor;
+import com.example.demo.models.Student;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
