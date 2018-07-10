@@ -1,9 +1,7 @@
 package com.example.demo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Student {
@@ -13,11 +11,20 @@ public class Student {
 
     private int studentNum;
 
-    private String name;
+    private String studentName;
 
     private String major;
 
     private int entryYear;
+
+    @ManyToMany
+    private Set<CourseClass> classes;
+
+    @ManyToMany
+    private Set<Major> majors;
+
+    @ManyToMany
+    private Set<Instructor> instructors;
 
     public long getId() {
         return id;
@@ -36,11 +43,11 @@ public class Student {
     }
 
     public String getName() {
-        return name;
+        return studentName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String studentName) {
+        this.studentName = studentName;
     }
 
     public String getMajor() {
@@ -57,5 +64,37 @@ public class Student {
 
     public void setEntryYear(int entryYear) {
         this.entryYear = entryYear;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public Set<CourseClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<CourseClass> classes) {
+        this.classes = classes;
+    }
+
+    public Set<Major> getMajors() {
+        return majors;
+    }
+
+    public void setMajors(Set<Major> majors) {
+        this.majors = majors;
+    }
+
+    public Set<Instructor> getInstructors() {
+        return instructors;
+    }
+
+    public void setInstructors(Set<Instructor> instructors) {
+        this.instructors = instructors;
     }
 }

@@ -52,13 +52,23 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 	<dependency>
+=======
+		<dependency>
+>>>>>>> 304fb4c0df6b8abd47ae31840954df33c30ab32c
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
+        </dependency>
+>>>>>>> 304fb4c0df6b8abd47ae31840954df33c30ab32c
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
