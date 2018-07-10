@@ -31,7 +31,7 @@ public class AuthController {
     @GetMapping("/register")
     public String regiter(Model model) {
         model.addAttribute("user", new AppUser());
-        model.addAttribute("roles", roles.findAllByRoleAndRole("STUDENT", "TEACHER"));
+        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
         return "register";
     }
 
@@ -46,7 +46,7 @@ public class AuthController {
         }
 
         users.save(user);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @PostConstruct() public void allRoles() {

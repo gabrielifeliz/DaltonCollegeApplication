@@ -8,8 +8,6 @@
 <body id="register-page">
 <div class="container mt-5">
     <form class="form-signin" th:action="@{/register}" th:object="${user}" method="post">
-        <!--<img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72"-->
-        <!--height="72">-->
         <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
         <span th:if="${usernameErr}" class="text-danger">Username already exists...Pick another</span>
         <input type="hidden" th:field="*{id}">
@@ -17,19 +15,16 @@
         <input type="text" class="form-control" th:field="*{username}" placeholder="Username" required="" autofocus="">
         <label for="password" class="sr-only">Password</label>
         <input type="password" class="form-control" th:field="*{password}" placeholder="Password" required="">
-        
-        <div class="form-group">
-            <label for="roles" class="sr-only">What are you?</label>
-            <select th:field="*{roles}" class="form-control">
-                <option th:each="role : roles" th:text="${role.role}" th:value="${role.id}"></option>
-            </select>
-        </div>
-
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
+        <label for="roles">What are you?</label>
+        <select th:field="*{roles}" class="form-control">
+            <option th:each="role : ${roles}" th:text="${role.role}" th:value="${role.id}"></option>
+        </select>
+        <br>
         <button class="btn btn-lg btn-warning btn-block" type="submit">Sign up</button>
         <p class="mt-5 mb-3 text-muted">© 2018-2019</p>
     </form>
