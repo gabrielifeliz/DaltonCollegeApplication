@@ -16,14 +16,17 @@ public class CourseClass {
 
     private String subjectCode;
 
-    private Set<Instructor> instructors;
+    @ManyToOne
+    private Instructor instructor;
 
     @ManyToOne
     private Classroom classroom;
 
-    public CourseClass() {
-        instructors = new HashSet<>();
-    }
+    @ManyToOne
+    private Course course;
+
+    @ManyToMany
+    private Set<Student> students;
 
     public long getId() {
         return id;
@@ -57,12 +60,12 @@ public class CourseClass {
         this.subjectCode = subjectCode;
     }
 
-    public Set<Instructor> getInstructors() {
-        return instructors;
+    public Instructor getInstructor() {
+        return instructor;
     }
 
-    public void setInstructors(Set<Instructor> instructors) {
-        this.instructors = instructors;
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
 
     public Classroom getClassroom() {
@@ -71,5 +74,21 @@ public class CourseClass {
 
     public void setClassroom(Classroom classroom) {
         this.classroom = classroom ;
+    }
+
+    public Course getCourse() {
+        return course;
+    }
+
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
     }
 }

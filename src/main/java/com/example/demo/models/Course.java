@@ -69,4 +69,12 @@ public class Course {
     public void setCredits(int credits) {
         this.credits = credits;
     }
+
+    public Set<CourseClass> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(Set<CourseClass> classes) {
+        this.classes = classes;
+    }
 }
