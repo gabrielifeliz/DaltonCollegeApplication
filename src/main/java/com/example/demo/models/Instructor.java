@@ -1,6 +1,7 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -25,6 +26,10 @@ public class Instructor {
 
     @ManyToMany
     private Set<Student> students;
+
+    public Instructor(){
+        classes = new HashSet<>();
+    }
 
     public long getId() {
         return id;
