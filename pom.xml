@@ -57,10 +57,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
         </dependency>
+=======
+>>>>>>> b2dcd37739074483875171211d640aba0bc27b70
 	</dependencies>
 
 	<build>

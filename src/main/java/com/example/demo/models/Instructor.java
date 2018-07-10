@@ -1,10 +1,7 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
-<<<<<<< HEAD
 import java.util.HashSet;
-=======
->>>>>>> ef6ffe89392dec92b9c9605042573d8801576a79
 import java.util.Set;
 
 @Entity
