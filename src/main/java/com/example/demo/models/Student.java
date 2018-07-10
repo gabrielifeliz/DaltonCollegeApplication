@@ -18,13 +18,13 @@ public class Student {
     private int entryYear;
 
     @ManyToMany
-    public Set<CourseClass> classes;
+    private Set<CourseClass> classes;
 
     @ManyToMany
-    public Set<Major> majors;
+    private Set<Major> majors;
 
     @ManyToMany
-    public Set<Instructor> instructors;
+    private Set<Instructor> instructors;
 
     public long getId() {
         return id;

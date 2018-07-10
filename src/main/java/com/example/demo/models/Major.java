@@ -15,7 +15,7 @@ public class Major {
     private Department department;
 
     @ManyToMany
-    public Set<Student> students;
+    private Set<Student> students;
 
     public long getId() {
         return id;
