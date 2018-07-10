@@ -14,7 +14,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
-    <a class="navbar-brand" href="/"><img src="/img/dalton-logo.png" width="40" height="40" alt="Dalton Logo"></a>
+    <a class="navbar-brand" href="/"><img id="logo-icon" src="/img/dalton-logo.png" alt="Dalton Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
         <form class="form-inline my-2 my-lg-0" th:action="@{/search}">
             <input class="form-control mr-sm-1" type="text" name="search" placeholder="Search for a class here..." aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                <img src="/img/mag-glass-icon.png" width="20" height="20" alt="Search Icon"></button>
+                <img id="search-icon" src="/img/mag-glass-icon.png" alt="Search Icon"></button>
         </form>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
