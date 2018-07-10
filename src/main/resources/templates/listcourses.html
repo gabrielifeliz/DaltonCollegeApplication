@@ -5,14 +5,16 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/newStylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
 </head>
 <body class="bg1">
 
 <div class="container">
 
     <h2>List of Courses </h2>
-    <table class="table table-bordered">
-        <thead>
+    <table class="table">
+        <thead  class="thead-dark">
         <tr>
             <th>Course Num</th>
             <th>Subjet Code</th>
@@ -23,7 +25,7 @@
 
         </tr>
         </thead>
-        <tbody>
+        <tbody >
         <tr th:each="cousres : ${courses}">
             <td th:text="${cousres.courseNum}"></td>
             <td th:text="${cousres.subjectCode}"></td>
