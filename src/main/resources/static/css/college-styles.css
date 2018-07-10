@@ -1,25 +1,25 @@
 /*id's*/
 
 #student-body{
-    background-image: url("static/img/student-background");
+    background-image: url("/img/student-background.jpg");
     background-size: 100%;
     background-position: top;
 }
 
 #admin-body{
-    background-image: url("static/img/admin-background.jpg");
+    background-image: url("/img/admin-background.jpg");
     background-size: 100%;
     background-position: top;
 }
 
 #login-page{
-    background-image: url("static/img/college-background.jpg");
+    background-image: url("/img/college-background.jpg");
     background-size: 100%;
     background-position: top;
 }
 
 #register-page{
-    background-image: url("static/img/college-logo-background.jpg");
+    background-image: url("/img/college-logo-background.jpg");
     background-size: 100%;
     background-position: top;
 }
