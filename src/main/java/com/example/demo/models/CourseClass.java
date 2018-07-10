@@ -20,7 +20,7 @@ public class CourseClass {
     private Instructor instructor;
 
     @ManyToOne
-    private Classroom classroom ;
+    private Classroom classroom;
 
     public long getId() {
         return id;

@@ -49,7 +49,7 @@ public class AuthController {
         return "redirect:/";
     }
 
-    @PostConstruct() public void allRoles(){
+    @PostConstruct() public void allRoles() {
         UserRole role = new UserRole("STUDENT");
         roles.save(role);
 
