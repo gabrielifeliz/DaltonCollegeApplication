@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserRoleRepository extends CrudRepository<UserRole, Long> {
     UserRole findByRole(String role);
-    Iterable<UserRole> findAllByRoleAndRole(String role, String anotherRole);
+    Iterable<UserRole> findAllByRoleOrRole(String role, String anotherRole);
 }
