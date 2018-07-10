@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/newStylesheet.css">
+</head>
+<body class="bg1">
+
+<div class="container">
+
+    <h2>List of Classes</h2>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>CRN Num</th>
+            <th>Course Number</th>
+            <th>Subject Code</th>
+            <th>Instructor</th>
+            <th>Class Room Number</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="classes : ${classes}">
+            <td th:text="${classes.crn}"></td>
+            <td th:text="${classes.courseNum}"></td>
+            <td th:text="${classes.subjectCode}"></td>
+            <td th:text="${classes.instructors}"></td>
+            <td th:text="${classes.getRoomNum()}"></td>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+
