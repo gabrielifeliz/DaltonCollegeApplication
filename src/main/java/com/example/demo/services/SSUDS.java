@@ -1,8 +1,8 @@
 package com.example.demo.services;
 
-import com.example.demo.model.AppUser;
-import com.example.demo.model.AppUserRepository;
-import com.example.demo.model.UserRole;
+import com.example.demo.models.authentication.AppUser;
+import com.example.demo.models.authentication.UserRole;
+import com.example.demo.repositories.AppUserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
