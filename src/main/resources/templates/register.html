@@ -21,7 +21,7 @@
         <div class="form-group">
             <label for="roles" class="sr-only">What are you?</label>
             <select th:field="*{roles}" class="form-control">
-                <option th:each="role : roles" th:text="${role.role}" th:value="${role.id}"></option>
+                <option th:each="role : ${roles}" th:text="${role.role}" th:value="${role.id}"></option>
             </select>
         </div>
 
