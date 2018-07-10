@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class UserRoles {
+public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -15,11 +15,11 @@ public class UserRoles {
     @ManyToMany(mappedBy = "roles")
     private Set<AppUser> users;
 
-    public UserRoles() {
+    public UserRole() {
         users = new HashSet<>();
     }
 
-    public UserRoles(String role) {
+    public UserRole(String role) {
         this.role = role;
         users = new HashSet<>();
     }
