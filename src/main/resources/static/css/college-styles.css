@@ -1,3 +1,17 @@
+/*id's*/
+
+#student-body{
+    background-image: url("static/img/student-background");
+    background-position: top;
+}
+
+#admin-body{
+    background-image: url("static/img/admin-background.jpg");
+    background-position: top;
+}
+
+/*classes*/
+
 .app-section{
     height: 100%;
     background-size: cover;
