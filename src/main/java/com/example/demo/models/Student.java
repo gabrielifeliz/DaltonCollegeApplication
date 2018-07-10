@@ -1,17 +1,17 @@
 package com.example.demo.models;
 
+import com.example.demo.models.authentication.AppUser;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Student {
+public class Student extends AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private int studentNum;
-
-    private String studentName;
 
     private String major;
 
@@ -42,14 +42,6 @@ public class Student {
         this.studentNum = studentNum;
     }
 
-    public String getName() {
-        return studentName;
-    }
-
-    public void setName(String studentName) {
-        this.studentName = studentName;
-    }
-
     public String getMajor() {
         return major;
     }
@@ -64,14 +56,6 @@ public class Student {
 
     public void setEntryYear(int entryYear) {
         this.entryYear = entryYear;
-    }
-
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
     }
 
     public Set<CourseClass> getClasses() {

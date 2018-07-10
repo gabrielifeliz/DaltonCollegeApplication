@@ -1,18 +1,18 @@
 package com.example.demo.models;
 
+import com.example.demo.models.authentication.AppUser;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Instructor {
+public class Instructor extends AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private int employeeNum;
-
-    private String name;
 
     private String department;
 
@@ -20,12 +20,6 @@ public class Instructor {
 
     @OneToMany
     private Set<CourseClass> classes;
-
-    @ManyToMany
-    private Set<Department> departments;
-
-    @ManyToMany
-    private Set<Student> students;
 
     public Instructor(){
         classes = new HashSet<>();
@@ -45,14 +39,6 @@ public class Instructor {
 
     public void setEmployeeNum(int employeeNum) {
         this.employeeNum = employeeNum;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDepartment() {
@@ -77,21 +63,5 @@ public class Instructor {
 
     public void setClasses(Set<CourseClass> classes) {
         this.classes = classes;
-    }
-
-    public Set<Department> getDepartments() {
-        return departments;
-    }
-
-    public void setDepartments(Set<Department> departments) {
-        this.departments = departments;
-    }
-
-    public Set<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(Set<Student> students) {
-        this.students = students;
     }
 }

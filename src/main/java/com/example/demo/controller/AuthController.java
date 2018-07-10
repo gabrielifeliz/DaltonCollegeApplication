@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.models.Student;
 import com.example.demo.models.authentication.AppUser;
 import com.example.demo.models.authentication.UserRole;
 import com.example.demo.repositories.AppUserRepository;
@@ -36,12 +37,10 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String saveUser(@Valid @ModelAttribute("user") AppUser user, BindingResult result, Model model) {
+    public String saveUser(@ModelAttribute("user") Student user, Model model) {
 
-        AppUser currentUser = ((AppUser)result.getModel().get("user"));
-
-        if(users.existsByUsername(currentUser.getUsername())){
-            model.addAttribute("usernameErr", users.existsByUsername(currentUser.getUsername()));
+        if(users.existsByUsername(user.getUsername())){
+            model.addAttribute("usernameErr", users.existsByUsername(user.getUsername()));
             return "register";
         }
         user.addRole(roles.findByRole("STUDENT"));
