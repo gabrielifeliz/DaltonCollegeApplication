@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 @Controller
 public class TestController {
 
+
     @Autowired
     MajorRepository majors;
 

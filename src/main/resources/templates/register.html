@@ -9,7 +9,7 @@
 
 <body id="register-page">
     <div th:replace="base :: navbar"></div>
-    <div class="container mt-5 content-wrapper fading-in-animation m1">
+    <div class="container mt-5 content-wrapper m1">
         <form class="form-signin" th:action="@{/register}" th:object="${user}" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
             <span th:if="${usernameErr}" class="text-danger">Username already exists...Pick another</span>
