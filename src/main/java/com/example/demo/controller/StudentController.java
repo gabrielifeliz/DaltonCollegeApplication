@@ -45,14 +45,15 @@ public class StudentController {
     }
 
     @GetMapping("/enroll")
-    public String enrollInClass() {
-        return "enrollclass";
+    public String enrollInClass(Model model, @ModelAttribute("user")Student student) {
+        model.addAttribute("student", student);
+        model.addAttribute("classes", classes.findAll());
+        return "/students/enrollclass";
     }
 
     @PostMapping("/enroll")
-    public String processEnrollment(@ModelAttribute("course") Course course, Model model){
-
-        model.addAttribute("classes", classes.findAllByCourse(course));
+    public String processEnrollment(@ModelAttribute("student") Student student){
+        students.save(student);
         return "redirect:/";
     }
 
