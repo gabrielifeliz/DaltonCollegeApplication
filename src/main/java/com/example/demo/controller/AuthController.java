@@ -34,9 +34,7 @@ public class AuthController {
         model.addAttribute("user", new AppUser());
 //        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
         return "register";
-    }
-
-    @PostMapping("/register")
+    }@PostMapping("/register")
     public String saveUser(@ModelAttribute("user") Student user, Model model) {
         if(users.existsByUsername(user.getUsername())){
             model.addAttribute("usernameErr", users.existsByUsername(user.getUsername()));
