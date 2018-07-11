@@ -14,54 +14,6 @@
     </th:block>
 </head>
 <body>
-<<<<<<< HEAD
-<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
-    <a class="navbar-brand" href="/"><img id="logo-icon" src="/img/dalton-logo.png" alt="Dalton Logo"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!--<form class="form-inline my-2 my-lg-0" th:action="@{/search}">-->
-        <!--<input class="form-control mr-sm-1" type="text" name="search" placeholder="Search for a class here..."-->
-        <!--aria-label="Search">-->
-        <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">-->
-        <!--<img id="search-icon" src="/img/mag-glass-icon.png" alt="Search Icon"></button>-->
-        <!--</form>-->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <div id="navbarDropdown">
-                <div class="btn-group">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle navbar-light bg-light"
-                                data-toggle="dropdown">
-                            <span>View</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/teacher/">Instructors</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/classes/">Classes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/students/">Students</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div sec:authorize="isAuthenticated()" class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle navbar-light bg-light"
-                                data-toggle="dropdown">
-                            <span>Add</span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                            <span><a class="nav-link" href="/students/add">Student</a></span>
-                            <span sec:authorize="hasAuthority('ADMIN')"><a class="nav-link"
-                                                                           href="/classes/add">Class</a></span>
-                        </ul>
-=======
     <nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navbar">
         <a class="navbar-brand" href="/"><img id="logo-icon" src="/img/dalton-logo.png" alt="Dalton Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +54,6 @@
                                 <span sec:authorize="hasAuthority('ADMIN')"><a class="nav-link" href="/classes/add">Class</a></span>
                             </ul>
                         </div>
->>>>>>> b16344a6d4bff073a823489526df9b1c19c296fc
                     </div>
                 </div>
             </ul>
