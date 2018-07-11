@@ -10,7 +10,9 @@ import java.util.Set;
 public class Instructor extends AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long employeeNum;
+    private long id;
+
+    private int employeeNum;
 
     private String department;
 
@@ -23,11 +25,19 @@ public class Instructor extends AppUser {
         classes = new HashSet<>();
     }
 
-    public long getEmployeeNum() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getEmployeeNum() {
         return employeeNum;
     }
 
-    public void setEmployeeNum(long employeeNum) {
+    public void setEmployeeNum(int employeeNum) {
         this.employeeNum = employeeNum;
     }
 
