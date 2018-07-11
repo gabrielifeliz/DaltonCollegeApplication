@@ -31,7 +31,9 @@ public class SSUDS implements UserDetailsService {
             if (user == null)
                 throw new UsernameNotFoundException("Invalid username or password");
             else {
-                System.out.println("picked " + user.getUsername() + "from the database");
+
+                System.out.println("picked " + user.getUsername() + " from the database.");
+
                 return new User(user.getUsername(), user.getPassword(), getAuthorities(user));
             }
         } catch (Exception e) {
