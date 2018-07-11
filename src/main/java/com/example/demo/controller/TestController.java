@@ -31,7 +31,7 @@ public class TestController {
 
     @RequestMapping("/addinstructor")
     public String addInstructor() {
-        return "instructors/add";
+        return "teachers/add";
     }
 
     @RequestMapping("/studentlist")
