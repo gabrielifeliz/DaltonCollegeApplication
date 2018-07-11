@@ -11,28 +11,6 @@ import javax.annotation.PostConstruct;
 @Controller
 public class TestController {
 
-//    @RequestMapping("/classlist")
-//    public String classList(){ return "listclass"; }
-//
-//    @RequestMapping("/courselist")
-//    public String courseList(){ return "listcourses"; }
-//
-//    @RequestMapping("/addstudent")
-//    public String addStudent() {
-//        return "students/add";
-//    }
-//
-//    @RequestMapping("/addinstructor")
-//    public String addInstructor() {
-//        return "instructors/add";
-//    }
-//
-//    @RequestMapping("/studentlist")
-//    public String studentList() {
-//        return "students/list";
-//    }
-
-
     @Autowired
     MajorRepository majors;
 
