@@ -21,7 +21,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0" th:action="@{/search}">
             <input class="form-control mr-sm-1" type="text" name="search" placeholder="Search for a class here..." aria-label="Search">
@@ -29,35 +28,49 @@
                 <img id="search-icon" src="/img/mag-glass-icon.png" alt="Search Icon"></button>
         </form>
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
-        </ul>
-        <li class="nav-item dropdown navbar-styling">
-            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Add
-            </a>
-            <div class="dropdown-menu navbar-styling" aria-labelledby="navbarDropdown">
-                <table>
-                    <tr>
-                        <span><a class="nav-link" href="/addstudent">Student</a></span>
-                        <span><a class="nav-link" href="/addinstructor">Instructor</a></span>
-                        <a class="nav-link" href="/class/newClass">Class</a>
-                    </tr>
-                </table>
+            <div id="navbarDropdown">
+
+                <div class="btn-group">
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle navbar-light bg-light" data-toggle="dropdown">
+                            <span>View</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/instructor">Instructors</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/courselist">Courses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/classlist">Classes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/studentlist">Students</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle navbar-light bg-light" data-toggle="dropdown">
+                            <span>Add</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <span><a class="nav-link" href="/addstudent">Student</a></span>
+                            <span><a class="nav-link" href="/addinstructor">Instructor</a></span>
+                            <span><a class="nav-link" href="/class/newClass">Class</a></span>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
-        </li>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/instructor">Instructors</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/courselist">Courses</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/classlist">Classes</a>
-            </li>
         </ul>
+
         <ul class="navbar-nav mr-right">
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
