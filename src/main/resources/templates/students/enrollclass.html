@@ -2,11 +2,27 @@
 <html lang="en" xmlns:th="www.thymeleaf.org/" xmlns:sec="http://www.thymeleaf.org.thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
-    <title>Add Class</title>
+    <title>Add Student</title>
     <th:block th:replace="base :: csslinks"></th:block>
 </head>
-<body id="add-class-page">
+<body id="add-student-page">
 <div th:replace="base :: navbar"></div>
+<div class="container content-wrapper m2">
+    <form th:action="@{/students/add}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{studentNum}">
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" th:field="*{fullName}" placeholder="Enter your full name..">
+        </div><!--This, above, div segment should be in the register form instead...-->
+        <div class="form-group">
+            <label for="majors">Choose your major</label>
+            <select th:field="*{majors}" class="form-control">
+                <option th:each="major : ${majors}" th:text="${major.majorName}" th:value="${major.id}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

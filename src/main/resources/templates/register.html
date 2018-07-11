@@ -9,14 +9,16 @@
 
 <body id="register-page">
     <div th:replace="base :: navbar"></div>
-    <div class="container mt-5 content-wrapper fading-in-animation m1">
+    <div class="container mt-5 content-wrapper m1">
         <form class="form-signin" th:action="@{/register}" th:object="${user}" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Register Form</h1>
             <span th:if="${usernameErr}" class="text-danger">Username already exists...Pick another</span>
             <input type="hidden" th:field="*{id}">
-            <label for="username" class="sr-only">Username</label>
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" th:field="*{fullName}" placeholder="Enter your full name..">
+            <label for="username">Username</label>
             <input type="text" class="form-control" th:field="*{username}" placeholder="Username" required="" autofocus="">
-            <label for="password" class="sr-only">Password</label>
+            <label for="password">Password</label>
             <input type="password" class="form-control" th:field="*{password}" placeholder="Password" required="">
             <div class="checkbox mb-3">
                 <label>
