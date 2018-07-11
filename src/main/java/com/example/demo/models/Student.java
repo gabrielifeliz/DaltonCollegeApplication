@@ -13,8 +13,6 @@ public class Student extends AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentNum;
 
-    private String studentName;
-
     private Year entryYear;
 
     @ManyToMany
@@ -22,14 +20,6 @@ public class Student extends AppUser {
 
     @ManyToMany
     private Set<Major> majors;
-
-    public String getStudentName() {
-        return studentName;
-    }
-
-    public void setStudentName(String studentName) {
-        this.studentName = studentName;
-    }
 
     public int getStudentNum() {
         return studentNum;

@@ -9,7 +9,7 @@
 
 <body id="student-list-page">
     <div th:replace="base :: navbar"></div>
-// TASSO ADDED THIS TABLE - PLEASE MAKE SURE CORRECT
+
     <div class="container content-wrapper-g m2">
 
         <h2>List of Students</h2>
@@ -25,18 +25,19 @@
             </tr>
             </thead>
             <tbody>
+            // TASSO ADDED THIS TABLE - PLEASE MAKE SURE CORRECT
             <tr th:each="classes : ${classes}">
                 <td th:text="${classes.studentNum}"></td>
                 <td th:text="${classes.studentName}"></td>
                 <td th:text="${classes.entryYear}"></td>
                 <td th:text="${classes.getMajors()}"></td>
-
+            //END OF WHAT I THINK COULD NEED WORK
             </tr>
 
             </tbody>
         </table>
     </div>
-//END OF WHAT I ADDED
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
