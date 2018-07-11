@@ -24,7 +24,6 @@
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
-    min-height: 100%;
 }
 
 
@@ -48,7 +47,21 @@
 
 #add-student-page{
     background-image: url("/img/add-student-background.jpg");
-    background-size: 80%;
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#add-instructor-page{
+    background-image: url("/img/add-professor-background.jpg");
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#student-list-page{
+    background-image: url("/img/student-list-background.jpg");
+    background-size: 100%;
     background-position: top;
 }
 
