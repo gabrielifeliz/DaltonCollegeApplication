@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Student List</title>
+    <title>Instructor List</title>
     <th:block th:replace="base :: csslinks"></th:block>
 </head>
 
-<body id="student-list-page">
+<body id="instructor-list-page">
     <div th:replace="base :: navbar"></div>
 
     <div class="container content-wrapper-g m2">
@@ -17,21 +17,21 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th>Student Number</th>
-                <th>Student Name</th>
-                <th>Major</th>
-                <th>Year of Entry</th>
+                <th>Employee Number</th>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Office Number</th>
 
             </tr>
             </thead>
             <tbody>
-            // TASSO ADDED THIS TABLE - VARIABLE PATHS MIGHT BE WRONG
+            // TASSO ADDED THIS TABLE - VARIABLE PATHS ARE DEFF WRONG
             <tr th:each="classes : ${classes}">
                 <td th:text="${classes.studentNum}"></td>
                 <td th:text="${classes.studentName}"></td>
                 <td th:text="${classes.entryYear}"></td>
                 <td th:text="${classes.getMajors()}"></td>
-            //END OF WORK NEEDED
+                //END OF WORK NEEDED
             </tr>
 
             </tbody>

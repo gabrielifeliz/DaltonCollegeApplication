@@ -10,39 +10,37 @@
 
 <body id="class-page" class="bg1">
 
-<div th:replace="base :: navbar"></div>
+    <div th:replace="base :: navbar"></div>
 
-<div class="container content-wrapper-g m2">
+    <div class="container content-wrapper-g m2">
 
-    <h2>List of Classes</h2>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>CRN Num</th>
-            <th>Course Number</th>
-            <th>Subject Code</th>
-            <th>Instructor</th>
-            <th>Class Room Number</th>
+        <h2>List of Classes</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>CRN Num</th>
+                    <th>Course Number</th>
+                    <th>Subject Code</th>
+                    <th>Instructor</th>
+                    <th>Class Room Number</th>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="classes : ${classes}">
-            <td th:text="${classes.crn}"></td>
-            <td th:text="${classes.courseNum}"></td>
-            <td th:text="${classes.subjectCode}"></td>
-            <td th:text="${classes.instructor.fullName}"></td>
-            <td th:text="${classes.getRoomNum()}"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="classes : ${classes}">
+                    <td th:text="${classes.crn}"></td>
+                    <td th:text="${classes.courseNum}"></td>
+                    <td th:text="${classes.subjectCode}"></td>
+                    <td th:text="${classes.instructor.fullName}"></td>
+                    <td th:text="${classes.getRoomNum()}"></td>
 
-        </tr>
+                </tr>
 
-        </tbody>
-    </table>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
-<<<<<<< HEAD
-
-</html>
+<<<<<<< HEAD </html>
