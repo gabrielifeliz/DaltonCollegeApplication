@@ -46,6 +46,12 @@
     background-position: top;
 }
 
+#add-student-page{
+    background-image: url("/img/add-student-background.jpg");
+    background-size: 80%;
+    background-position: top;
+}
+
 #search-icon{
     width: 30px;
     height: 30px;
