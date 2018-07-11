@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/teacher")
+@RequestMapping("/teachers")
 public class TeacherController {
     @Autowired
     CourseClassRepository courseClassRepository;
