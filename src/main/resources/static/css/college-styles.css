@@ -72,8 +72,6 @@
     padding: 16px;
     border-radius: 5px;
     color: black;
-    background-color: rgba(255,215,0,0.5);
-    padding: 16px;
     border: 2px solid white;
 }
 
@@ -86,9 +84,6 @@
     animation-duration: 0.6s;
 }
 
-.emphasize{
-    animation-name: emphasize;
-}
 
 .m1{
     margin: 200px 0 0 40px;
@@ -135,15 +130,4 @@
         font-weight: 400;
     }
 }
-@keyframes emphasize {
-    0% {
-        transform: scale(1,1);
-        font-weight: 300;
-        color: white;
-    }
-    100% {
-        transform: scale(1.7,1);
-        color: #ffe866;
-        font-weight: 600;
-    }
-}
+
