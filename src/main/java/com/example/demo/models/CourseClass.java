@@ -12,10 +12,6 @@ public class CourseClass {
 
     private String crn;
 
-    private int courseNum;
-
-    private String subjectCode;
-
     @ManyToOne
     private Instructor instructor;
 
@@ -45,19 +41,11 @@ public class CourseClass {
     }
 
     public int getCourseNum() {
-        return courseNum;
-    }
-
-    public void setCourseNum(int courseNum) {
-        this.courseNum = courseNum;
+        return course.getCourseNum();
     }
 
     public String getSubjectCode() {
-        return subjectCode;
-    }
-
-    public void setSubjectCode(String subjectCode) {
-        this.subjectCode = subjectCode;
+        return course.getSubjectCode();
     }
 
     public Instructor getInstructor() {

@@ -1,7 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.models.Course;
+import com.example.demo.models.Student;
+import com.example.demo.repositories.AppUserRepository;
 import com.example.demo.repositories.CourseClassRepository;
+import com.example.demo.repositories.MajorRepository;
+import com.example.demo.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,26 +15,45 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/student")
+@RequestMapping("/students")
 public class StudentController {
+    @Autowired
+    AppUserRepository users;
+
+    @Autowired
+    StudentRepository students;
 
     @Autowired
     CourseClassRepository classes;
 
+    @Autowired
+    MajorRepository majors;
+
     @RequestMapping("/")
     public String studentHome() {
-        return "student-home";
+        return "students/student-home";
+    }
+
+    @GetMapping("/add") public String getStudent(@ModelAttribute("user")Student student, Model model){
+        model.addAttribute("student", student);
+        model.addAttribute("majors", majors.findAll());
+        return "students/add";
+    }@PostMapping("/add") public String saveStudent(@ModelAttribute("user") Student student){
+//        users.save(student);
+        students.save(student);
+        return "redirect:/students/";
     }
 
     @GetMapping("/enroll")
-    public String enrollInClass() {
-        return "enrollclass";
+    public String enrollInClass(Model model, @ModelAttribute("user")Student student) {
+        model.addAttribute("student", student);
+        model.addAttribute("classes", classes.findAll());
+        return "/students/enrollclass";
     }
 
     @PostMapping("/enroll")
-    public String processEnrollment(@ModelAttribute("course") Course course, Model model){
-
-        model.addAttribute("classes", classes.findAllByCourse(course));
+    public String processEnrollment(@ModelAttribute("student") Student student){
+        students.save(student);
         return "redirect:/";
     }
 

@@ -1,42 +1,34 @@
 package com.example.demo.controller;
 
+import com.example.demo.models.Major;
+import com.example.demo.repositories.MajorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.PostConstruct;
+
 @Controller
 public class TestController {
-    @RequestMapping(value={"", "/"})
-    public String studentHome() {
-        return "student-home";
-    }
 
-    @RequestMapping("/admin")
-    public String adminHome() {
-        return "admin-home";
-    }
 
-    @RequestMapping("/instructor")
-    public String instructorHome(){ return "instructor"; }
+    @Autowired
+    MajorRepository majors;
 
-    @RequestMapping("/classlist")
-    public String classList(){ return "listclass"; }
+    @PostConstruct() public void majors() {
+        Major major = new Major();
+        major.setMajorName("Computer Engineering");
+        majors.save(major);
 
-    @RequestMapping("/courselist")
-    public String courseList(){ return "listcourses"; }
+        major = new Major();
+        major.setMajorName("Computer Science");
+        majors.save(major);
 
-    @RequestMapping("/addstudent")
-    public String addStudent() {
-        return "students/add";
-    }
+        major = new Major();
+        major.setMajorName("Computer Design");
+        majors.save(major);
 
-    @RequestMapping("/addinstructor")
-    public String addInstructor() {
-        return "instructors/add";
-    }
 
-    @RequestMapping("/studentlist")
-    public String studentList() {
-        return "students/list";
     }
 
 }

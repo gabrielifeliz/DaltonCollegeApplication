@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Instructor</title>
+    <th:block th:replace="base :: csslinks"></th:block>
+</head>
+
+<body id="instructor-page" class="bg1">
+
+<div th:replace="base :: navbar"></div>
+
+<div class="container content-wrapper-g m2">
+
+
+    <h2 class="emphasize">List of Instructors</h2>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Employee Number</th>
+            <th>Name of Instructor</th>
+            <th>Department</th>
+            <th>Office Number</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="instructors : ${instructors}">
+            <td th:text="${instructors.employeeNum}"></td>
+            <td th:text="${instructors.name}"></td>
+            <td th:text="${instructors.department}"></td>
+            <td th:text="${instructors.officeNum}"></td>
+
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

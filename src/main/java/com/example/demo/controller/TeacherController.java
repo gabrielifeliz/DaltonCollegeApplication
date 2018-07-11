@@ -8,8 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
 import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -22,12 +25,13 @@ public class TeacherController {
     CourseClassRepository courseClassRepository;
 
     @Autowired
+    StudentRepository students;
+
+    @Autowired
     TeacherService teacherService;
 
-    @RequestMapping("/viewclass")
-    public String viewClassInCurrentSem(Model model){
-        return "viewclass";
-    }
+    @RequestMapping("/")
+    public String instructorHome(){ return "teachers/instructors"; }
 
     @RequestMapping("/getroster")
     public String getRosterOfStud(@ModelAttribute("courseClasses")CourseClass courseClass, Model model, Authentication auth){
@@ -51,6 +55,6 @@ public class TeacherController {
 
     }
 
-    Authentication auth, int crn,String grade,int  studentNum
+
 }
 

@@ -3,18 +3,17 @@ package com.example.demo.models;
 import com.example.demo.models.authentication.AppUser;
 
 import javax.persistence.*;
+import java.time.Year;
+import java.time.YearMonth;
 import java.util.Set;
 
 @Entity
 public class Student extends AppUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentNum;
 
-    private int entryYear;
+    private Year entryYear;
 
     private String grade;
 
@@ -32,14 +31,6 @@ public class Student extends AppUser {
     @ManyToMany
     private Set<Major> majors;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public int getStudentNum() {
         return studentNum;
     }
@@ -48,11 +39,11 @@ public class Student extends AppUser {
         this.studentNum = studentNum;
     }
 
-    public int getEntryYear() {
+    public Year getEntryYear() {
         return entryYear;
     }
 
-    public void setEntryYear(int entryYear) {
+    public void setEntryYear(Year entryYear) {
         this.entryYear = entryYear;
     }
 

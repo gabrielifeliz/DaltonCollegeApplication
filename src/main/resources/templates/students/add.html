@@ -6,16 +6,21 @@
     <th:block th:replace="base :: csslinks"></th:block>
 </head>
 <body id="add-student-page">
+<div th:replace="base :: navbar"></div>
 <div class="container content-wrapper m2">
-    <form>
-        <input type="hidden">
+    <form th:action="@{/students/add}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{studentNum}">
         <div class="form-group">
             <label for="fullName">Full Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name..">
+            <input type="text" class="form-control" th:field="*{fullName}" placeholder="Enter your full name..">
+        </div><!--This, above, div segment should be in the register form instead...-->
+        <div class="form-group">
+            <label for="majors">Choose your major</label>
+            <select th:field="*{majors}" class="form-control">
+                <option th:each="major : ${majors}" th:text="${major.majorName}" th:value="${major.id}"></option>
+            </select>
         </div>
-        <select name="majors" id="majors">
-            <option value="id"></option>
-        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 </body>

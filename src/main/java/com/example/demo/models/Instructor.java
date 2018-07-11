@@ -8,29 +8,20 @@ import java.util.Set;
 
 @Entity
 public class Instructor extends AppUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int employeeNum;
 
-    private String department;
-
     private int officeNum;
+
+    @ManyToMany
+    private Set<Department> departments;
 
     @OneToMany
     private Set<CourseClass> classes;
 
     public Instructor(){
         classes = new HashSet<>();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public int getEmployeeNum() {
@@ -41,20 +32,20 @@ public class Instructor extends AppUser {
         this.employeeNum = employeeNum;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public int getOfficeNum() {
         return officeNum;
     }
 
     public void setOfficeNum(int officeNum) {
         this.officeNum = officeNum;
+    }
+
+    public Set<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Set<Department> departments) {
+        this.departments = departments;
     }
 
     public Set<CourseClass> getClasses() {

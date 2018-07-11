@@ -9,38 +9,38 @@
 
 <body id="course-page" class="bg1">
 
-<div th:replace="base :: navbar"></div>
+    <div th:replace="base :: navbar"></div>
 
-<div class="container content-wrapper m2">
+    <div class="container content-wrapper m2">
 
-    <h2 class="emphasize">List of Courses</h2>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>Course Num</th>
-            <th>Subjet Code</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Number of Credit</th>
+        <h2>List of Courses</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Course Num</th>
+                    <th>Subjet Code</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Number of Credit</th>
 
-        </tr>
-        </thead>
-        <tbody >
-        <tr th:each="cousres : ${courses}">
-            <td th:text="${cousres.courseNum}"></td>
-            <td th:text="${cousres.subjectCode}"></td>
-            <td th:text="${cousres.name}"></td>
-            <td th:text="${cousres.description}"></td>
-            <td th:text="${cousres.credits}"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cousres : ${courses}">
+                    <td th:text="${cousres.courseNum}"></td>
+                    <td th:text="${cousres.subjectCode}"></td>
+                    <td th:text="${cousres.name}"></td>
+                    <td th:text="${cousres.description}"></td>
+                    <td th:text="${cousres.credits}"></td>
 
-        </tr>
+                </tr>
 
-        </tbody>
-    </table>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
