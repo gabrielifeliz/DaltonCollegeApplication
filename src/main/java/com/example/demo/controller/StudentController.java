@@ -6,7 +6,6 @@ import com.example.demo.repositories.AppUserRepository;
 import com.example.demo.repositories.CourseClassRepository;
 import com.example.demo.repositories.MajorRepository;
 import com.example.demo.repositories.StudentRepository;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +31,7 @@ public class StudentController {
 
     @RequestMapping("/")
     public String studentHome() {
-        return "student-home";
+        return "students/student-home";
     }
 
     @GetMapping("/add") public String getStudent(@ModelAttribute("user")Student student, Model model){
