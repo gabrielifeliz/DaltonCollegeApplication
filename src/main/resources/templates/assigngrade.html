@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/newStylesheet.css">
+</head>
+<body class="bg">
+
+<div class="container">
+    <form class="form-horizontal" action="#"
+          th:action="@{/assgingrade/{id}}"
+          th:object="${students}"
+          method="post">
+        <h2>Add Grade to the Students </h2>
+        <div class="form-group">
+            <div class="control-label col-sm-2" th:each="eachstudent:${students}">
+                <ul>
+                    <li><span th:text="${students.name}"/><input type="text" class="form-control" th:field="*{grade}" size="10"/></li>
+                    <button class="alig" type="submit">Add Grade</button>
+                </ul>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <br />
+
+    </form>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

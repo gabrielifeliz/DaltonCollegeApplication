@@ -46,5 +46,11 @@ public class TeacherService {
         return null;
     }
 
+    public Student assgnGrade(Student stud,String grade){
+
+        stud.setGrade(grade);
+        return stud;
+
+
 
 }
