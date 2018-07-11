@@ -9,11 +9,7 @@ import java.util.Set;
 public class Student extends AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-
-    private int studentNum;
-
-    private String major;
+    private long studentNum;
 
     private int entryYear;
 
@@ -23,31 +19,12 @@ public class Student extends AppUser {
     @ManyToMany
     private Set<Major> majors;
 
-    @ManyToMany
-    private Set<Instructor> instructors;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public int getStudentNum() {
+    public long getStudentNum() {
         return studentNum;
     }
 
-    public void setStudentNum(int studentNum) {
+    public void setStudentNum(long studentNum) {
         this.studentNum = studentNum;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
     }
 
     public int getEntryYear() {
@@ -72,13 +49,5 @@ public class Student extends AppUser {
 
     public void setMajors(Set<Major> majors) {
         this.majors = majors;
-    }
-
-    public Set<Instructor> getInstructors() {
-        return instructors;
-    }
-
-    public void setInstructors(Set<Instructor> instructors) {
-        this.instructors = instructors;
     }
 }

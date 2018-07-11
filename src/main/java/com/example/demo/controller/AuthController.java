@@ -38,7 +38,6 @@ public class AuthController {
 
     @PostMapping("/register")
     public String saveUser(@ModelAttribute("user") Student user, Model model) {
-
         if(users.existsByUsername(user.getUsername())){
             model.addAttribute("usernameErr", users.existsByUsername(user.getUsername()));
             return "register";
