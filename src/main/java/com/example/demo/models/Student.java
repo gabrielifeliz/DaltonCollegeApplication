@@ -11,9 +11,8 @@ public class Student extends AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentNum;
-
-    private String major;
 
     private int entryYear;
 
@@ -22,9 +21,6 @@ public class Student extends AppUser {
 
     @ManyToMany
     private Set<Major> majors;
-
-    @ManyToMany
-    private Set<Instructor> instructors;
 
     public long getId() {
         return id;
@@ -40,14 +36,6 @@ public class Student extends AppUser {
 
     public void setStudentNum(int studentNum) {
         this.studentNum = studentNum;
-    }
-
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
     }
 
     public int getEntryYear() {
@@ -72,13 +60,5 @@ public class Student extends AppUser {
 
     public void setMajors(Set<Major> majors) {
         this.majors = majors;
-    }
-
-    public Set<Instructor> getInstructors() {
-        return instructors;
-    }
-
-    public void setInstructors(Set<Instructor> instructors) {
-        this.instructors = instructors;
     }
 }
