@@ -32,9 +32,22 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/class/newClass">Add Class</a>
-            </li>
+        </ul>
+        <li class="nav-item dropdown navbar-styling">
+            <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add
+            </a>
+            <div class="dropdown-menu navbar-styling" aria-labelledby="navbarDropdown">
+                <table>
+                    <tr>
+                        <span><a class="nav-link" href="/addstudent">Student</a></span>
+                        <span><a class="nav-link" href="/addinstructor">Instructor</a></span>
+                        <a class="nav-link" href="/class/newClass">Class</a>
+                    </tr>
+                </table>
+            </div>
+        </li>
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a class="nav-link" href="/instructor">Instructors</a>
             </li>
