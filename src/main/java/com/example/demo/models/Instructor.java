@@ -12,9 +12,10 @@ public class Instructor extends AppUser {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int employeeNum;
 
-    private String department;
-
     private int officeNum;
+
+    @ManyToMany
+    private Set<Department> departments;
 
     @OneToMany
     private Set<CourseClass> classes;
@@ -31,20 +32,20 @@ public class Instructor extends AppUser {
         this.employeeNum = employeeNum;
     }
 
-    public String getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(String department) {
-        this.department = department;
-    }
-
     public int getOfficeNum() {
         return officeNum;
     }
 
     public void setOfficeNum(int officeNum) {
         this.officeNum = officeNum;
+    }
+
+    public Set<Department> getDepartments() {
+        return departments;
+    }
+
+    public void setDepartments(Set<Department> departments) {
+        this.departments = departments;
     }
 
     public Set<CourseClass> getClasses() {
