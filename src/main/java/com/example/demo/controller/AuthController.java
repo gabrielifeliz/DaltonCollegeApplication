@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.models.Student;
 import com.example.demo.models.authentication.AppUser;
 import com.example.demo.models.authentication.UserRole;
 import com.example.demo.repositories.AppUserRepository;
@@ -31,20 +32,17 @@ public class AuthController {
     @GetMapping("/register")
     public String regiter(Model model) {
         model.addAttribute("user", new AppUser());
-        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
+//        model.addAttribute("roles", roles.findAllByRoleOrRole("STUDENT", "TEACHER"));
         return "register";
     }
 
     @PostMapping("/register")
-    public String saveUser(@Valid @ModelAttribute("user") AppUser user, BindingResult result, Model model) {
-
-        AppUser currentUser = ((AppUser)result.getModel().get("user"));
-
-        if(users.existsByUsername(currentUser.getUsername())){
-            model.addAttribute("usernameErr", users.existsByUsername(currentUser.getUsername()));
+    public String saveUser(@ModelAttribute("user") Student user, Model model) {
+        if(users.existsByUsername(user.getUsername())){
+            model.addAttribute("usernameErr", users.existsByUsername(user.getUsername()));
             return "register";
         }
-
+        user.addRole(roles.findByRole("STUDENT"));
         users.save(user);
         return "redirect:/login";
     }
@@ -55,5 +53,15 @@ public class AuthController {
 
         role = new UserRole("TEACHER");
         roles.save(role);
+
+        role = new UserRole("ADMIN");
+        roles.save(role);
+
+        AppUser admin = new AppUser();
+        admin.setUsername("admin");
+        admin.setPassword("pass");
+        admin.addRole(roles.findByRole("ADMIN"));
+
+        users.save(admin);
     }
 }

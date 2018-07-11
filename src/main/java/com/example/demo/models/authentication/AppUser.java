@@ -1,5 +1,7 @@
 package com.example.demo.models.authentication;
 
+import com.example.demo.models.Instructor;
+import com.example.demo.models.Student;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
@@ -11,6 +13,8 @@ public class AppUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    private String fullName;
 
     private String username;
 
@@ -35,6 +39,14 @@ public class AppUser {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getUsername() {
