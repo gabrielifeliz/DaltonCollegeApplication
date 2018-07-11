@@ -59,6 +59,12 @@
     background-repeat: no-repeat;
 }
 
+#add-class-page{
+    background-image: url("/img/add-class-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
 #student-list-page{
     background-image: url("/img/student-list-background.jpg");
     background-size: 100%;
