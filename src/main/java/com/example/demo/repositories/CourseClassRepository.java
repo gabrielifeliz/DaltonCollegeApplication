@@ -5,5 +5,5 @@ import com.example.demo.models.CourseClass;
 import org.springframework.data.repository.CrudRepository;
 
 public interface CourseClassRepository extends CrudRepository<CourseClass, Long> {
-    Iterable<CourseClass> findAllByCourse(Course course);
+    Course findAllByCourse(Course course);
 }
