@@ -1,12 +1,13 @@
 /*id's*/
 
-#student-body{
+
+#student-page{
     background-image: url("/img/student-background.jpg");
     background-size: 100%;
     background-position: top;
 }
 
-#admin-body{
+#admin-page{
     background-image: url("/img/admin-background.jpg");
     background-size: 100%;
     background-position: top;
@@ -23,7 +24,63 @@
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
-    min-height: 100%;
+}
+
+
+#instructor-page{
+    background-image: url("/img/professor-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#class-page{
+   background-image: url("/img/class-background.jpg");
+   background-size: 100%;
+   background-position: top;
+}
+
+#course-page{
+    background-image: url("/img/course-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#add-student-page{
+    background-image: url("/img/add-student-background.jpg");
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#add-instructor-page{
+    background-image: url("/img/add-professor-background.jpg");
+    background-size: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+#add-class-page{
+    background-image: url("/img/add-class-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#student-list-page{
+    background-image: url("/img/student-list-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#index-page{
+    background-image: url("/img/index-background.jpg");
+    background-size: 100%;
+    background-position: top;
+}
+
+#introduction-button{
+    background-image: url("/img/dalton-intro-button.jpg");
+    border-radius: 20px;
+    border: 1px solid white;
 }
 
 #search-icon{
@@ -40,6 +97,21 @@
 
 /*classes*/
 
+.app-section{
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 40px;
+}
+
+.center{
+    text-align: center;
+    justify-content: center;
+}
+
 .content-wrapper{
     background-color: rgba(1, 43, 81, 0.5);
     padding: 16px;
@@ -48,22 +120,43 @@
 }
 
 .content-wrapper-g{
-    background-color: rgba(255,215,0,0.5);
+    background-color: rgba(255,215,0,0.7);
     padding: 16px;
+    border-radius: 5px;
+    color: black;
     border: 2px solid white;
 }
 
-.fading-in-animation{
+.fade-in-1{
     animation-name: fade-in;
-    animation-duration: 0.6s;
+    animation-duration: 2s;
 }
-.fading-out-animation{
+
+.fade-in-2{
+    animation-name: fade-in;
+    animation-duration: 4s;
+}
+
+.fade-out{
     animation-name: fade-out;
     animation-duration: 0.6s;
 }
 
 .m1{
     margin: 200px 0 0 40px;
+}
+
+.m2{
+    margin: 40px 0 0 40px;
+}
+
+.m3{
+    margin-top: 40px;
+}
+
+.m4{
+    margin-top: 100px;
+    padding-bottom: 60px;
 }
 
 /*animations*/
@@ -103,15 +196,4 @@
         font-weight: 400;
     }
 }
-@keyframes emphasize {
-    0% {
-        transform: scale(1,1);
-        font-weight: 300;
-        color: white;
-    }
-    100% {
-        transform: scale(1.7,1);
-        color: #ffe866;
-        font-weight: 600;
-    }
-}
+

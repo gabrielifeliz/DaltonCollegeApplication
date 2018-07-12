@@ -3,36 +3,33 @@ package com.example.demo.models;
 import com.example.demo.models.authentication.AppUser;
 
 import javax.persistence.*;
+import java.time.Year;
+import java.time.YearMonth;
 import java.util.Set;
 
 @Entity
 public class Student extends AppUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int studentNum;
 
-    private String major;
+    private Year entryYear;
 
-    private int entryYear;
+    private String grade;
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
 
     @ManyToMany
     private Set<CourseClass> classes;
 
     @ManyToMany
     private Set<Major> majors;
-
-    @ManyToMany
-    private Set<Instructor> instructors;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getStudentNum() {
         return studentNum;
@@ -42,19 +39,11 @@ public class Student extends AppUser {
         this.studentNum = studentNum;
     }
 
-    public String getMajor() {
-        return major;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
-    }
-
-    public int getEntryYear() {
+    public Year getEntryYear() {
         return entryYear;
     }
 
-    public void setEntryYear(int entryYear) {
+    public void setEntryYear(Year entryYear) {
         this.entryYear = entryYear;
     }
 
@@ -72,13 +61,5 @@ public class Student extends AppUser {
 
     public void setMajors(Set<Major> majors) {
         this.majors = majors;
-    }
-
-    public Set<Instructor> getInstructors() {
-        return instructors;
-    }
-
-    public void setInstructors(Set<Instructor> instructors) {
-        this.instructors = instructors;
     }
 }
