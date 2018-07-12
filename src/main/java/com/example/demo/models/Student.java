@@ -4,7 +4,6 @@ import com.example.demo.models.authentication.AppUser;
 
 import javax.persistence.*;
 import java.time.Year;
-import java.time.YearMonth;
 import java.util.Set;
 
 @Entity

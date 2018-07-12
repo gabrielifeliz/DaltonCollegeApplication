@@ -7,6 +7,7 @@ import com.example.demo.repositories.CourseClassRepository;
 import com.example.demo.repositories.MajorRepository;
 import com.example.demo.repositories.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,12 +35,13 @@ public class StudentController {
         return "students/student-home";
     }
 
-    @GetMapping("/add") public String getStudent(@ModelAttribute("user")Student student, Model model){
+    @GetMapping("/add") public String getStudent(Authentication authentication, Model model){
+        Student student = students.findByUsername(authentication.getName());
         model.addAttribute("student", student);
         model.addAttribute("majors", majors.findAll());
         return "students/add";
-    }@PostMapping("/add") public String saveStudent(@ModelAttribute("user") Student student){
-//        users.save(student);
+    }@PostMapping("/add") public String saveStudent(@ModelAttribute("student") Student student){
+        users.save(student);
         students.save(student);
         return "redirect:/students/";
     }

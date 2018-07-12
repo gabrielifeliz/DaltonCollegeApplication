@@ -20,19 +20,15 @@ public class AdminService {
     @Autowired
     StudentRepository students;
 
-    public Instructor studentToTeacher(Student student, Instructor teacher){
+    public Instructor studentToTeacher(Student student){
         AppUser user = student;
-        AppUser morphedUser = teacher;
+        AppUser morphedUser = new Instructor();
 
-        morphedUser.setId(user.getId());
         morphedUser.setFullName(user.getFullName());
         morphedUser.setUsername(user.getUsername());
-        morphedUser.setPassword(user.getPassword());
+        morphedUser.setPassword("pass");
         morphedUser.addRole(roles.findByRole("TEACHER"));
 
-        students.delete((Student)user);
-        teachers.save((Instructor)morphedUser);
-
-        return (Instructor) morphedUser;
+        return (Instructor)morphedUser;
     }
 }

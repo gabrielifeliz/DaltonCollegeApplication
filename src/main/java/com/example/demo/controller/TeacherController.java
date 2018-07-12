@@ -39,10 +39,10 @@ public class TeacherController {
         return "studentlist";
     }
 
-    @RequestMapping("/assgingrade")
-    public String assignGrade(@ModelAttribute("coursesClasses") CourseClass courseClass, Model model, Authentication auth){
-        model.addAttribute("grade",teacherService.assgnGrade(auth,courseClass.getCourseNum(),))
-    }
+//    @RequestMapping("/assgingrade")
+//    public String assignGrade(@ModelAttribute("coursesClasses") CourseClass courseClass, Model model, Authentication auth){
+//        model.addAttribute("grade",teacherService.assgnGrade(auth,courseClass.getCourseNum(),))
+//    }
 
 
     @RequestMapping("/assgingrade/{id}")

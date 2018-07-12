@@ -4,6 +4,7 @@ import com.example.demo.models.Student;
 import com.example.demo.models.authentication.AppUser;
 import com.example.demo.models.authentication.UserRole;
 import com.example.demo.repositories.AppUserRepository;
+import com.example.demo.repositories.StudentRepository;
 import com.example.demo.repositories.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ import javax.validation.Valid;
 public class AuthController {
     @Autowired
     AppUserRepository users;
+
+    @Autowired
+    StudentRepository students;
 
     @Autowired
     UserRoleRepository roles;
@@ -41,7 +45,10 @@ public class AuthController {
             return "register";
         }
         user.addRole(roles.findByRole("STUDENT"));
-        users.save(user);
+
+        students.save(user);
+        users.save(user);//are these two lines redundant? I feel like they are... Ghislain
+
         return "redirect:/login";
     }
 

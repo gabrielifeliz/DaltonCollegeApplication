@@ -9,11 +9,20 @@
 <div th:replace="base :: navbar"></div>
 <div class="container content-wrapper m2">
     <form th:action="@{/students/add}" th:object="${student}" method="post">
+        <input type="hidden" th:field="*{id}">
         <input type="hidden" th:field="*{studentNum}">
         <div class="form-group">
             <label for="fullName">Full Name</label>
             <input type="text" class="form-control" th:field="*{fullName}" placeholder="Enter your full name..">
-        </div><!--This, above, div segment should be in the register form instead...-->
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" th:field="*{username}" placeholder="Username" required="" autofocus="">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" th:field="*{password}" placeholder="Password" required="">
+        </div>
         <div class="form-group">
             <label for="majors">Choose your major</label>
             <select th:field="*{majors}" class="form-control">
